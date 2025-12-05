@@ -1,0 +1,183 @@
+<html>
+  <head>
+    <meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>关于谷歌 Chrome 浏览器碰见的一些小问题 | Hel1umHE &#39;s Blog</title>
+<link rel="shortcut icon" href="https://hel1umhe.github.io/favicon.ico?v=1764953689443">
+<link href="https://cdn.jsdelivr.net/npm/remixicon@2.3.0/fonts/remixicon.css" rel="stylesheet">
+<link rel="stylesheet" href="https://hel1umhe.github.io/styles/main.css">
+<link rel="alternate" type="application/atom+xml" title="关于谷歌 Chrome 浏览器碰见的一些小问题 | Hel1umHE &#39;s Blog - Atom Feed" href="https://hel1umhe.github.io/atom.xml">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Droid+Serif:400,700">
+
+
+
+    <meta name="description" content="前段时间一直在用edge，结果因为edge的一些不太好的东西（游戏助手）导致转了Firefox，可是Firefox的使用体验上又不太好，最后转了Chrome。最近在用Chrome的时候碰见了点之前版本没有的小问题（版本142），如下：
+
+点..." />
+    <meta name="keywords" content="" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
+    <script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.5.1/build/highlight.min.js"></script>
+  </head>
+  <body>
+    <div class="main">
+      <div class="main-content">
+        <div class="site-header">
+  <a href="https://hel1umhe.github.io">
+  <img class="avatar" src="https://hel1umhe.github.io/images/avatar.png?v=1764953689443" alt="">
+  </a>
+  <h1 class="site-title">
+    Hel1umHE &#39;s Blog
+  </h1>
+  <p class="site-description">
+    一些技术性的东西，一些日常，还有其他别的什么<br/>
+Some technical articles , some daily life , and something else
+  </p>
+  <div class="menu-container">
+    
+      
+        <a href="https://hel1umhe.github.io" class="menu">
+          首页
+        </a>
+      
+    
+      
+        <a href="https://hel1umhe.github.io/archives" class="menu">
+          归档
+        </a>
+      
+    
+      
+        <a href="https://hel1umhe.github.io/tags" class="menu">
+          标签
+        </a>
+      
+    
+      
+        <a href="https://hel1umhe.github.io/about" class="menu">
+          关于
+        </a>
+      
+    
+  </div>
+  <div class="social-container">
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+  </div>
+</div>
+
+        <div class="post-detail">
+          <article class="post">
+            <h2 class="post-title">
+              关于谷歌 Chrome 浏览器碰见的一些小问题
+            </h2>
+            <div class="post-info">
+              <span>
+                2025-12-05
+              </span>
+              <span>
+                2 min read
+              </span>
+              
+            </div>
+            
+              <img class="post-feature-image" src="https://hel1umhe.github.io/post-images/chrome-troubleshooting.png" alt="">
+            
+            <div class="post-content-wrapper">
+              <div class="post-content" v-pre>
+                <p>前段时间一直在用edge，结果因为edge的一些不太好的东西（游戏助手）导致转了Firefox，可是Firefox的使用体验上又不太好，最后转了Chrome。最近在用Chrome的时候碰见了点之前版本没有的小问题（版本142），如下：</p>
+<ol>
+<li>点击正在播放的标签页的喇叭图标，标签页不静音</li>
+<li>浏览器无法检测到电脑中正在运行的QQ客户端进行快速登录</li>
+</ol>
+<hr>
+<p>解决方法如下：</p>
+<ul>
+<li>点击正在播放音频的标签页的喇叭图标时，标签页无法静音
+<ul>
+<li>解决方法：在地址栏输入<code>chrome://flags/</code>，在搜索框中输入<code>tab audio muting</code>，找到<code>Tab Audio Muting UI Control</code>项，将其设置为<code>Enabled</code>，重启浏览器即可。<br>
+<img src="https://hel1umhe.github.io/post-images/1764869016173.png" alt="" loading="lazy"></li>
+</ul>
+</li>
+<li>浏览器无法使用QQ快捷登录（检测不到电脑中已启动的QQ客户端）
+<ul>
+<li>解决方法：在地址栏输入<code>chrome://flags/</code>，在搜索框中输入<code>local network access checks</code>，找到<code>Local Network Access Checks</code>项，将其设置为<code>Enabled</code> ，重启浏览器即可。<br>
+<img src="https://hel1umhe.github.io/post-images/1764869028133.png" alt="" loading="lazy"></li>
+</ul>
+</li>
+</ul>
+<hr>
+<p>至少我目前发现这两个问题，第一个不知道什么时候更新的，但是第二条据查是在142版本中更新了本地网络的访问限制，具体请见：<a href="https://developer.chrome.com/release-notes/142?hl=zh-cn#local_network_access_restrictions">Chrome版本142 | 版本日志</a></p>
+
+              </div>
+              <div class="toc-container">
+                
+              </div>
+            </div>
+          </article>
+        </div>
+
+        
+
+        
+
+        <div class="site-footer">
+  Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a>
+  <a class="rss" href="https://hel1umhe.github.io/atom.xml" target="_blank">
+    <i class="ri-rss-line"></i> RSS
+  </a>
+</div>
+
+      </div>
+    </div>
+
+    <script>
+      hljs.initHighlightingOnLoad()
+
+      let mainNavLinks = document.querySelectorAll(".markdownIt-TOC a");
+
+      // This should probably be throttled.
+      // Especially because it triggers during smooth scrolling.
+      // https://lodash.com/docs/4.17.10#throttle
+      // You could do like...
+      // window.addEventListener("scroll", () => {
+      //    _.throttle(doThatStuff, 100);
+      // });
+      // Only not doing it here to keep this Pen dependency-free.
+
+      window.addEventListener("scroll", event => {
+        let fromTop = window.scrollY;
+
+        mainNavLinks.forEach((link, index) => {
+          let section = document.getElementById(decodeURI(link.hash).substring(1));
+          let nextSection = null
+          if (mainNavLinks[index + 1]) {
+            nextSection = document.getElementById(decodeURI(mainNavLinks[index + 1].hash).substring(1));
+          }
+          if (section.offsetTop <= fromTop) {
+            if (nextSection) {
+              if (nextSection.offsetTop > fromTop) {
+                link.classList.add("current");
+              } else {
+                link.classList.remove("current");    
+              }
+            } else {
+              link.classList.add("current");
+            }
+          } else {
+            link.classList.remove("current");
+          }
+        });
+      });
+
+    </script>
+  </body>
+</html>

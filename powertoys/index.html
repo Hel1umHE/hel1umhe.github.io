@@ -1,0 +1,243 @@
+<html>
+  <head>
+    <meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Windows搜索平替方案一则 | Hel1umHE &#39;s Blog</title>
+<link rel="shortcut icon" href="https://hel1umhe.github.io/favicon.ico?v=1764953689443">
+<link href="https://cdn.jsdelivr.net/npm/remixicon@2.3.0/fonts/remixicon.css" rel="stylesheet">
+<link rel="stylesheet" href="https://hel1umhe.github.io/styles/main.css">
+<link rel="alternate" type="application/atom+xml" title="Windows搜索平替方案一则 | Hel1umHE &#39;s Blog - Atom Feed" href="https://hel1umhe.github.io/atom.xml">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Droid+Serif:400,700">
+
+
+
+    <meta name="description" content="
+使用PowerToys命令面板平替Windows自带搜索
+
+更改系统搜索的起因是本人的自带搜索基本无法使用（白屏），再加上自带搜索界面右侧的网页搜索本人根本用不到，所以才有了研究替换方案的想法。
+目前已经将Windows自带搜索彻底改成了..." />
+    <meta name="keywords" content="" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
+    <script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.5.1/build/highlight.min.js"></script>
+  </head>
+  <body>
+    <div class="main">
+      <div class="main-content">
+        <div class="site-header">
+  <a href="https://hel1umhe.github.io">
+  <img class="avatar" src="https://hel1umhe.github.io/images/avatar.png?v=1764953689443" alt="">
+  </a>
+  <h1 class="site-title">
+    Hel1umHE &#39;s Blog
+  </h1>
+  <p class="site-description">
+    一些技术性的东西，一些日常，还有其他别的什么<br/>
+Some technical articles , some daily life , and something else
+  </p>
+  <div class="menu-container">
+    
+      
+        <a href="https://hel1umhe.github.io" class="menu">
+          首页
+        </a>
+      
+    
+      
+        <a href="https://hel1umhe.github.io/archives" class="menu">
+          归档
+        </a>
+      
+    
+      
+        <a href="https://hel1umhe.github.io/tags" class="menu">
+          标签
+        </a>
+      
+    
+      
+        <a href="https://hel1umhe.github.io/about" class="menu">
+          关于
+        </a>
+      
+    
+  </div>
+  <div class="social-container">
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+  </div>
+</div>
+
+        <div class="post-detail">
+          <article class="post">
+            <h2 class="post-title">
+              Windows搜索平替方案一则
+            </h2>
+            <div class="post-info">
+              <span>
+                2025-12-05
+              </span>
+              <span>
+                3 min read
+              </span>
+              
+            </div>
+            
+              <img class="post-feature-image" src="https://hel1umhe.github.io/post-images/powertoys.png" alt="">
+            
+            <div class="post-content-wrapper">
+              <div class="post-content" v-pre>
+                <blockquote>
+<p>使用PowerToys命令面板平替Windows自带搜索</p>
+</blockquote>
+<p>更改系统搜索的起因是本人的自带搜索基本无法使用（白屏），再加上自带搜索界面右侧的网页搜索本人根本用不到，所以才有了研究替换方案的想法。<br>
+目前已经将Windows自带搜索彻底改成了PowerToys命令面板（包括快捷键），使用起来没有任何问题。</p>
+<hr>
+<h1 id="优点">优点</h1>
+<h2 id="powertoys">PowerToys</h2>
+<ul>
+<li>微软官方出品，自带许多实用功能，包括窗口置顶、屏幕标尺、快捷键指南、窗口布局器等等，极大程度提高电脑的使用体验</li>
+<li>代码开源，可供用户审查</li>
+<li>功能可按需启用，且不与系统冲突</li>
+</ul>
+<hr>
+<h1 id="设置流程">设置流程</h1>
+<h3 id="首先是软件的下载">首先是软件的下载：</h3>
+<ul>
+<li>前往Microsoft Store下载PowerToys<br>
+<img src="https://hel1umhe.github.io/post-images/1764900434466.png" alt="Microsoft Store的PowerToys软件页面" loading="lazy"></li>
+</ul>
+<p>下载完之后将自动进行安装（默认C盘，若介意可前往 **<a href="https://github.com/microsoft/PowerToys">PowerToys Github仓库</a>**查找最新release进行下载安装），之后便可以进行下一步</p>
+<h3 id="系统的设置">系统的设置</h3>
+<p>打开开系统设置，找到个性化-任务栏-任务栏项，将搜索图标隐藏<br>
+<img src="https://hel1umhe.github.io/post-images/1764902307695.png" alt="隐藏搜索图标" loading="lazy"><br>
+Windows键+R 打开运行窗口，输入regedit，回车进入注册表编辑器<br>
+<img src="https://hel1umhe.github.io/post-images/1764902410257.png" alt="运行窗口" loading="lazy"><br>
+之后导航到路径：<code>HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced</code><br>
+新建一个<strong>字符串值</strong>，名为<code>DisabledHotkeys</code>，双击编辑字符串，在数值数据一栏输入大写S后点确定，之后重启电脑，你会发现原先的Windows键+S已无法唤起Windows搜索<br>
+<img src="https://hel1umhe.github.io/post-images/1764902692838.png" alt="设置字符串值" loading="lazy"><br>
+完成之后即可进行下一步</p>
+<h3 id="软件的设置">软件的设置</h3>
+<p>PowerToys默认开启命令面板，相关的图标就在托盘处，右击呼出菜单，之后点击设置进入命令面板的设置界面<br>
+<img src="https://hel1umhe.github.io/post-images/1764903041519.png" alt="" loading="lazy"><br>
+<img src="https://hel1umhe.github.io/post-images/1764903379342.png" alt="" loading="lazy"><br>
+在这里我们可以修改触发命令面板的快捷键，配置一些拓展，甚至关掉托盘图标<br>
+将激活键设为<code>Windows+S</code>，之后点击保存<br>
+<img src="https://hel1umhe.github.io/post-images/1764903578843.png" alt="" loading="lazy"><br>
+之后键盘按Windows+S键将唤出命令面板<br>
+<img src="https://hel1umhe.github.io/post-images/1764903670646.png" alt="" loading="lazy"><br>
+常规设置中的“行为”项可以设置是否自动展开应用详细信息、退格键返回、单击激活和显示托盘图标，这部分交给各位自行探索</p>
+<h3 id="拓展部分可选">拓展部分（可选）</h3>
+<p>命令面板由PowerToys Run演变而来，自然也就支持拓展功能，只不过安装拓展的方法更加简单：</p>
+<ol>
+<li>通过Winget获取</li>
+<li>通过Microsoft Store获取<br>
+<img src="https://hel1umhe.github.io/post-images/1764904075994.png" alt="" loading="lazy"><br>
+第一种方法将打开二级界面，这里是命令面板的拓展列表，在打开“单击激活”的情况下，点击将直接安装拓展，建议使用键盘上下选择，之后按回车进行安装<br>
+<img src="https://hel1umhe.github.io/post-images/1764904325854.png" alt="" loading="lazy"><br>
+第二种方法将直接打开Microsoft Store，在这里可以看一些拓展的预览图，方便进行选择<br>
+<img src="https://hel1umhe.github.io/post-images/1764904475333.png" alt="" loading="lazy"><br>
+若想卸载拓展可前往Windows设置-应用-已安装的应用进行卸载<br>
+<img src="https://hel1umhe.github.io/post-images/1764904811627.png" alt="" loading="lazy"><br>
+拓展相关的设置也可以在命令面板设置里进行调整<br>
+<img src="https://hel1umhe.github.io/post-images/1764905274571.png" alt="" loading="lazy"><br>
+<img src="https://hel1umhe.github.io/post-images/1764905396549.png" alt="" loading="lazy"></li>
+</ol>
+
+              </div>
+              <div class="toc-container">
+                <ul class="markdownIt-TOC">
+<li><a href="#%E4%BC%98%E7%82%B9">优点</a>
+<ul>
+<li><a href="#powertoys">PowerToys</a></li>
+</ul>
+</li>
+<li><a href="#%E8%AE%BE%E7%BD%AE%E6%B5%81%E7%A8%8B">设置流程</a><br>
+*
+<ul>
+<li><a href="#%E9%A6%96%E5%85%88%E6%98%AF%E8%BD%AF%E4%BB%B6%E7%9A%84%E4%B8%8B%E8%BD%BD">首先是软件的下载：</a></li>
+<li><a href="#%E7%B3%BB%E7%BB%9F%E7%9A%84%E8%AE%BE%E7%BD%AE">系统的设置</a></li>
+<li><a href="#%E8%BD%AF%E4%BB%B6%E7%9A%84%E8%AE%BE%E7%BD%AE">软件的设置</a></li>
+<li><a href="#%E6%8B%93%E5%B1%95%E9%83%A8%E5%88%86%E5%8F%AF%E9%80%89">拓展部分（可选）</a></li>
+</ul>
+</li>
+</ul>
+
+              </div>
+            </div>
+          </article>
+        </div>
+
+        
+          <div class="next-post">
+            <div class="next">下一篇</div>
+            <a href="https://hel1umhe.github.io/chrome-troubleshooting/">
+              <h3 class="post-title">
+                关于谷歌 Chrome 浏览器碰见的一些小问题
+              </h3>
+            </a>
+          </div>
+        
+
+        
+
+        <div class="site-footer">
+  Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a>
+  <a class="rss" href="https://hel1umhe.github.io/atom.xml" target="_blank">
+    <i class="ri-rss-line"></i> RSS
+  </a>
+</div>
+
+      </div>
+    </div>
+
+    <script>
+      hljs.initHighlightingOnLoad()
+
+      let mainNavLinks = document.querySelectorAll(".markdownIt-TOC a");
+
+      // This should probably be throttled.
+      // Especially because it triggers during smooth scrolling.
+      // https://lodash.com/docs/4.17.10#throttle
+      // You could do like...
+      // window.addEventListener("scroll", () => {
+      //    _.throttle(doThatStuff, 100);
+      // });
+      // Only not doing it here to keep this Pen dependency-free.
+
+      window.addEventListener("scroll", event => {
+        let fromTop = window.scrollY;
+
+        mainNavLinks.forEach((link, index) => {
+          let section = document.getElementById(decodeURI(link.hash).substring(1));
+          let nextSection = null
+          if (mainNavLinks[index + 1]) {
+            nextSection = document.getElementById(decodeURI(mainNavLinks[index + 1].hash).substring(1));
+          }
+          if (section.offsetTop <= fromTop) {
+            if (nextSection) {
+              if (nextSection.offsetTop > fromTop) {
+                link.classList.add("current");
+              } else {
+                link.classList.remove("current");    
+              }
+            } else {
+              link.classList.add("current");
+            }
+          } else {
+            link.classList.remove("current");
+          }
+        });
+      });
+
+    </script>
+  </body>
+</html>
